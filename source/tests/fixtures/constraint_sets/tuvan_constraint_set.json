@@ -1,0 +1,16 @@
+[
+  {"type": "Max", "bundles":[{"cons":"+"}]},
+  {"type": "Dep", "bundles":[{"cons":"-"}]},
+  {"type": "VowelHarmony", "bundles": [{"cons":"-","back":"+"}, {"cons":"+"}, {"cons":"-","back":"-"}]},
+  {"type": "VowelHarmony", "bundles": [{"cons":"-","back":"-"}, {"cons":"+"}, {"cons":"-","back":"+"}]},
+  {"type": "Ident", "bundles":[{"round":"-"}]},
+  {"type": "Ident", "bundles":[{"high":"-"}]},
+  {"type": "Faith", "bundles":[]},
+  {"type": "Phonotactic", "bundles": [{"cons":"+"}, {"cons":"+"}]},
+  {"type": "Phonotactic", "bundles": [{"cons":"-"}, {"cons":"-"}]}
+
+  ]
+
+
+
+
