@@ -334,50 +334,7 @@ class PhonotacticConstraint(Constraint):
         return PhonotacticConstraint(bundles)
 
 
-# class VowelHarmonyConstraint(Constraint):
-#     def __init__(self, bundles_list):
-#         super(VowelHarmonyConstraint, self).__init__([], False)
-#
-#
-#     def _make_transducer(self):
-#         segments = self.feature_table.get_segments()
-#         transducer = Transducer(segments, name=str(self))
-#
-#         state0 = State('harmony0')
-#         state1 = State('harmony1')
-#         state2 = State('harmony2')
-#         transducer.add_state(state0)
-#         transducer.add_state(state1)
-#         transducer.add_state(state2)
-#         transducer.initial_state = state0
-#         transducer.add_final_state(state0)
-#         transducer.add_final_state(state1)
-#
-#         for segment in segments:
-#             transducer.add_arc(Arc(state0, JOKER_SEGMENT, JOKER_SEGMENT, CostVector([0]), state0))
-#             segment_symbol = segment.get_symbol()
-#             if segment_symbol in tuvan_front_vowels:  # segment is -back
-#                 transducer.add_arc(Arc(state0, JOKER_SEGMENT, segment, CostVector([0]), state1))
-#                 transducer.add_arc(Arc(state1, JOKER_SEGMENT, segment, CostVector([0]), state1))
-#             if segment_symbol not in tuvan_vowels: # segment is cons
-#                 transducer.add_arc(Arc(state1, JOKER_SEGMENT, segment, CostVector([0]), state1))
-#             if segment_symbol == tuvan_a_suffix_vowel:  # segment is A
-#                 transducer.add_arc(Arc(state1, segment, tuvan_e_suffix_vowel, CostVector([0]), state1))
-#                 transducer.add_arc(Arc(state0, segment, tuvan_e_suffix_vowel, CostVector([0]), state2))
-#         return transducer
-
-
-
-
-
-#
-# tuvan_a_suffix_vowel = 'A'
-# tuvan_e_suffix_vowel = Segment('E')
-# tuvan_front_vowels = ['e', 'y']
-# tuvan_back_vowels = ['a', 'o', 'u']
-# tuvan_vowels = ['e', 'y', 'a', 'o', 'u', 'A','E']
-
-class VowelHarmonyConstraint(Constraint):
+class VowelHarmonyConstraint(Constraint): #for Tuvan VH test
     def __init__(self, bundles_list):
         super(VowelHarmonyConstraint, self).__init__(bundles_list, True)
 
